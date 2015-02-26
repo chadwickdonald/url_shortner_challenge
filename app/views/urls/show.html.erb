@@ -4,6 +4,6 @@
 		<h3>Original</h3>	
 		<%= @url.original %>
 		<h3>Shortened:</h3>
-		localhost:3000/<%= @url.shortened %>
+		<%= Url.base %><%= @url.shortened %>
 	</div>
 </div>
