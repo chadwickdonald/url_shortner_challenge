@@ -8,12 +8,11 @@ class UrlsController < ApplicationController
 
   def create
   	@url = Url.new(user_params)
-  	@url.shortened = (0..8).map { 65.+(rand(25)).chr }.join.downcase
   	if @url.save
   		flash[:success] = "Your short url was successfully created"
   		render "show"
   	else
-  		flash[:error] = "There was a problem creating your short url"
+  		flash[:danger] = "There was a problem creating your short url"
   		redirect_to root_url
   	end
  	end
